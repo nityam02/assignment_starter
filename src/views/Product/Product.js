@@ -13,12 +13,12 @@ import { debounce } from "utilities/helper";
 import "./Product.scss"
 
 
+var pageNumber=0;
 const Product=()=> {
 
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   const [productList, setProductList] = useState([]);
-  const [element, setElement] = useState(null);
-  let pageNumber = 0;
+
   useEffect(() => {
     loadHelpDocuments();
   }, []);
@@ -29,8 +29,7 @@ const Product=()=> {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          pageNumber += 10;
-          console.log("hello");
+          pageNumber++;
           loadHelpDocuments();
         }
       },
@@ -49,7 +48,6 @@ const Product=()=> {
       try {
           setLoading(true);
           const data = await getProducts(pageNumber);
-          console.log(data);
           setProductList(prev => ([...prev, ...data]));
           setLoading(false);
         } catch (error) {

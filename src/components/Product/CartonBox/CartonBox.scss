@@ -9,7 +9,7 @@
       margin: 0px 10px 10px 10px;
     }
     .product-img {
-      width: 130px;
+      width: 140px;
       object-fit: contain;
       border-radius: 999px;
       @media (max-width: 576px) {
@@ -28,6 +28,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background-image: url(http://placeimg.com/640/480/cats);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
       @media (max-width: 576px) {
         width: 75px;
         height: 75px;

@@ -4,14 +4,17 @@ import "./CartonBox.scss";
 const CartonBox = (props) => {
   const{ id,name,description,defaultImage,price,discount} =props.data
   return (
-    <div className="component-carton-box">
-      <div  className="product-item cursor-pointer relative select-none">
+    <div className="component-carton-box" role="productItem" aria-label="Product Item" key={id}>
+      <div  className="product-item cursor-pointer relative select-none" style={{backgroundImage:`url(${defaultImage})`}}>
         <div className="empty-circle"></div>
-         <img src={defaultImage} alt={name} className="product-img" />
       </div>
       <div className="mt-12 box-summary">
-        <h3 className="text-12 text-center">{name}</h3>
-        <div className="text-10 text-center">{description}</div>
+        <div className="text-12 text-center font-600">{name}</div>
+        <div className="mt-6 mb-6 text-center">
+        <del className="text-10 ">{price+discount}</del>
+        <span className="text-10  ml-4 text-main">{price}</span>
+        </div>  
+        <div className="text-10 text-center text-ellipsis">{description}</div>
       </div>
     </div>
   );

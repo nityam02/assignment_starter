@@ -1,0 +1,21 @@
+.component-loader {
+    position:fixed;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(70, 65, 65, 0.76);
+    z-index:9999;
+    display:block;
+  }
+  
+  .component-loader::after {
+    content:'';
+    display:block;
+    position: relative;
+    background-position: center !important;
+    width: 100vw;
+    height: 100vh;
+    background-size: 12%;
+    background-repeat: no-repeat !important;
+    background-image: url('../../../assets/images/loader.gif');
+  }
+  

@@ -54,6 +54,9 @@ align-items: baseline;
 .h-full {
   height: 100%;
 }
+.h-vh{
+  height: 100vh;
+}
 
 .h-50 {
   height: 50%;
@@ -178,6 +181,12 @@ align-items: baseline;
 @for $i from 1 through 20 {
   .mr-#{$i*2} {
     margin-right: 2px * $i;
+  }
+}
+// margin-left
+@for $i from 1 through 20 {
+  .ml-#{$i*2} {
+    margin-left: 2px * $i;
   }
 }
 
